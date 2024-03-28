@@ -4,8 +4,8 @@ import viteLogo from "/vite.svg";
 import CardHolder from "./Components/cardHolder";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState("usd");
   return (
     <>
       <div className="relative h-screen w-full flex justify-center items-center">
@@ -14,7 +14,7 @@ function App() {
           alt="Background Image"
           className="object-cover object-center w-full h-full absolute inset-0"
         />
-        <CardHolder />
+        <CardHolder amount={amount} currency={currency} />
       </div>
     </>
   );
