@@ -77,7 +77,7 @@ const CardHolder = ({
         <h3 className="text-center font-bold ">Convert To</h3>
         <div className="flex items-center justify-center mb-5">
           <select
-            value={convert}
+            value={to}
             className="ml-1 border border-gray-300 rounded-md px-2 py-1"
             onChange={(e) => convert && convert(e.target.value)}
           >
@@ -92,7 +92,7 @@ const CardHolder = ({
         <CardBody className="flex items-center justify-center">
           {" "}
           <div className="flex items-center">
-            <p>{`${amount} in ${currency} is ${finalAmount}  `}</p>
+            <p>{`${amount} in ${currency} is ${finalAmount} in ${to} `}</p>
           </div>
         </CardBody>
 
