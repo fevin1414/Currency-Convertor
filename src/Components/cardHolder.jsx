@@ -17,8 +17,8 @@ const CardHolder = ({
   amountChange,
   currencyChange,
   options,
-  convert = "inr",
   to,
+  convert,
   data,
 }) => {
   const [finalAmount, setFinalAmount] = useState("0");
@@ -28,6 +28,11 @@ const CardHolder = ({
     setFinalAmount(amount * conversionRate);
     console.log("Final Amount", finalAmount);
   };
+
+  useEffect(() => {
+    convertAmount();
+  }, [amount, currency, convert]);
+
   return (
     <div>
       {" "}
@@ -73,8 +78,8 @@ const CardHolder = ({
         <h3 className="text-center font-bold ">Convert To</h3>
         <div className="flex items-center justify-center mb-5">
           <select
-            className="ml-1 border border-gray-300 rounded-md px-2 py-1"
             value={convert}
+            className="ml-1 border border-gray-300 rounded-md px-2 py-1"
             onChange={(e) => convert && convert(e.target.value)}
           >
             {options.map((currency) => (
@@ -88,7 +93,7 @@ const CardHolder = ({
         <CardBody className="flex items-center justify-center">
           {" "}
           <div className="flex items-center">
-            <p>{`${amount}  ${currency} is ${finalAmount} in  ${to}`}</p>
+            <p>{`${amount} in ${currency} is ${finalAmount}  `}</p>
           </div>
         </CardBody>
 
