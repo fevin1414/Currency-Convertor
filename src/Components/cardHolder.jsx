@@ -28,10 +28,9 @@ const CardHolder = ({
     setFinalAmount(amount * conversionRate);
     console.log("Final Amount", finalAmount);
   };
-
   useEffect(() => {
     convertAmount();
-  }, [amount, currency, convert]);
+  }, [amount, to, currency, convert]);
 
   return (
     <div>

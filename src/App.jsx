@@ -32,7 +32,7 @@ function App() {
           currency={currency}
           amountChange={(amount) => setAmount(amount)}
           currencyChange={(currency) => setCurrency(currency)}
-          convertTo={(convert) => setTo(convert)}
+          convert={(convert) => setTo(convert)}
           options={options}
           to={to}
           data={data}
