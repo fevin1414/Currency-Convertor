@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -11,7 +11,7 @@ import {
   Input,
 } from "@nextui-org/react";
 
-const CardHolder = ({ amount, currency }) => {
+const CardHolder = ({ amount, currency, amountChange }) => {
   return (
     <div>
       {" "}
@@ -29,6 +29,9 @@ const CardHolder = ({ amount, currency }) => {
             placeholder="0.00"
             labelPlacement="outside"
             value={amount}
+            onChange={(e) =>
+              amountChange && amountChange(Number(e.target.value))
+            }
             endContent={
               <div className="flex items-center">
                 <span className="text-default-400 text-small">$</span>

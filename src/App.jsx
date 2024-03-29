@@ -14,7 +14,11 @@ function App() {
           alt="Background Image"
           className="object-cover object-center w-full h-full absolute inset-0"
         />
-        <CardHolder amount={amount} currency={currency} />
+        <CardHolder
+          amount={amount}
+          currency={currency}
+          amountChange={(amount) => setAmount(amount)}
+        />
       </div>
     </>
   );
